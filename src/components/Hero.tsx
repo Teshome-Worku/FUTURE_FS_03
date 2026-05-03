@@ -38,10 +38,10 @@ const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 >
-                    <button className="bg-red-600 hover:bg-red-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-red-500/30 hover:shadow-lg">
+                    <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-red-600 hover:bg-red-500 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-red-500/30 hover:shadow-lg">
                         Join Now
                     </button>
-                    <button className="border-2 border-gray-300 text-white hover:border-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                    <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="border-2 border-gray-300 text-white hover:border-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
                         View Pricing
                     </button>
                 </motion.div>

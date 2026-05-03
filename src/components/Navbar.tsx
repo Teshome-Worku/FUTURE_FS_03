@@ -21,8 +21,11 @@ const Navbar: React.FC = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
-    const handleLinkClick = () => {
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
         setIsMobileMenuOpen(false);
+        const targetId = href.replace('#', '');
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
     };
 
     const navLinks = [
@@ -38,7 +41,7 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-10">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <a href="#home" onClick={handleLinkClick} className="text-2xl font-bold text-white tracking-wide hover:text-gray-200 transition-colors">ASTU Gym</a>
+                            <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="text-2xl font-bold text-white tracking-wide hover:text-gray-200 transition-colors">ASTU Gym</a>
                         </div>
                     </div>
                     
@@ -48,6 +51,7 @@ const Navbar: React.FC = () => {
                             <a 
                                 key={link.name} 
                                 href={link.href} 
+                                onClick={(e) => handleLinkClick(e, link.href)}
                                 className="text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
                             >
                                 {link.name}
@@ -76,7 +80,7 @@ const Navbar: React.FC = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                onClick={handleLinkClick}
+                                onClick={(e) => handleLinkClick(e, link.href)}
                                 className="text-gray-200 hover:text-white hover:bg-zinc-800/50 block px-4 py-4 rounded-xl text-base font-medium transition-all"
                             >
                                 {link.name}

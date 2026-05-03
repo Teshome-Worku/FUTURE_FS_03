@@ -31,10 +31,10 @@ const Cta: React.FC = () => {
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                            <button className="bg-red-600 hover:bg-red-500 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-600/30">
+                            <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-red-600 hover:bg-red-500 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-600/30">
                                 Join Now
                             </button>
-                            <button className="bg-black/50 hover:bg-black text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 border border-zinc-500 hover:border-white backdrop-blur-md">
+                            <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="bg-black/50 hover:bg-black text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 border border-zinc-500 hover:border-white backdrop-blur-md">
                                 Contact Us
                             </button>
                         </div>

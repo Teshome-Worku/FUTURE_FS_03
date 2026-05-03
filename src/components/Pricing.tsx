@@ -125,7 +125,7 @@ const Pricing: React.FC = () => {
                                 ))}
                             </ul>
                             
-                            <button className={`w-full py-4 rounded-xl font-bold transition-all duration-300 ${plan.isPopular ? 'bg-red-600 hover:bg-red-500 text-white hover:shadow-lg hover:shadow-red-500/30' : 'bg-zinc-800 hover:bg-zinc-700 text-white hover:text-white'}`}>
+                            <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className={`w-full py-4 rounded-xl font-bold transition-all duration-300 ${plan.isPopular ? 'bg-red-600 hover:bg-red-500 text-white hover:shadow-lg hover:shadow-red-500/30' : 'bg-zinc-800 hover:bg-zinc-700 text-white hover:text-white'}`}>
                                 Join Now
                             </button>
                         </motion.div>
