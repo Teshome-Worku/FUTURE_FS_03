@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-white">Phone</p>
-                                        <p className="text-sm">+251 911 234 567</p>
+                                        <a href="tel:+251911234567" className="text-sm hover:text-red-500 transition-colors">+251 911 234 567</a>
                                     </div>
                                 </div>
                                 <div className="flex items-center text-gray-300 group">
@@ -63,19 +63,27 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-white">Email</p>
-                                        <p className="text-sm">info@astugym.com</p>
+                                        <a href="mailto:info@astugym.com" className="text-sm hover:text-red-500 transition-colors">info@astugym.com</a>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                                <button className="flex-1 bg-green-600 hover:bg-green-500 text-white py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-green-600/20">
+                                <a 
+                                    href="https://wa.me/251911234567" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="flex-1 bg-green-600 hover:bg-green-500 text-white py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-green-600/20"
+                                >
                                     <FaWhatsapp className="text-2xl" />
                                     WhatsApp Us
-                                </button>
-                                <button className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 px-6 rounded-xl font-bold transition-all duration-300">
+                                </a>
+                                <a 
+                                    href="tel:+251911234567"
+                                    className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center text-center"
+                                >
                                     Call Now
-                                </button>
+                                </a>
                             </div>
                         </div>
 
