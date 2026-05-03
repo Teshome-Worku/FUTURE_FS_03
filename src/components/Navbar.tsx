@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-10">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <h1 className="text-2xl font-bold text-white tracking-wide">ASTU Gym</h1>
+                            <a href="/" className="text-2xl font-bold text-white tracking-wide hover:text-gray-200 transition-colors">ASTU Gym</a>
                         </div>
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
