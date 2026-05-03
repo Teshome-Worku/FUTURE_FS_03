@@ -10,6 +10,9 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-black py-12 border-t border-zinc-900 text-center flex flex-col items-center">
             <div className="max-w-4xl mx-auto px-6">
+                <div className="flex justify-center mb-4">
+                    <img src="/logo.png" alt="ASTU Gym Logo" className="h-16 w-auto" />
+                </div>
                 <h2 className="text-2xl font-extrabold text-white tracking-widest mb-3">ASTU GYM</h2>
                 <p className="text-gray-400 text-sm max-w-md mx-auto mb-8 leading-relaxed">
                     Premium fitness facility located near ASTU campus. Build strength, increase endurance, and stay consistent with us.

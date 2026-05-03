@@ -41,7 +41,10 @@ const Navbar: React.FC = () => {
                 <div className="flex justify-between items-center h-10">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="text-2xl font-bold text-white tracking-wide hover:text-gray-200 transition-colors">ASTU Gym</a>
+                            <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="flex items-center gap-2 text-2xl font-bold text-white tracking-wide hover:text-gray-200 transition-colors">
+                                <img src="/logo.png" alt="ASTU Gym Logo" className="h-10 w-auto" />
+                                ASTU Gym
+                            </a>
                         </div>
                     </div>
                     
