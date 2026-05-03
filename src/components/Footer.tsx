@@ -1,43 +1,42 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+        e.preventDefault();
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <footer className="bg-gray-800 text-white py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">ASTU Gym</h3>
-                        <p className="text-gray-300">
-                            Empowering your fitness journey with state-of-the-art facilities and expert guidance.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                        <ul className="space-y-2">
-                            <li><a href="#about" className="text-gray-300 hover:text-white">About Us</a></li>
-                            <li><a href="#services" className="text-gray-300 hover:text-white">Services</a></li>
-                            <li><a href="#contact" className="text-gray-300 hover:text-white">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-                        <div className="flex space-x-4">
-                            <a href="#" className="text-gray-300 hover:text-white">
-                                <FaFacebook className="h-6 w-6" />
-                            </a>
-                            <a href="#" className="text-gray-300 hover:text-white">
-                                <FaTwitter className="h-6 w-6" />
-                            </a>
-                            <a href="#" className="text-gray-300 hover:text-white">
-                                <FaInstagram className="h-6 w-6" />
-                            </a>
-                        </div>
-                    </div>
+        <footer className="bg-black py-12 border-t border-zinc-900 text-center flex flex-col items-center">
+            <div className="max-w-4xl mx-auto px-6">
+                <h2 className="text-2xl font-extrabold text-white tracking-widest mb-3">ASTU GYM</h2>
+                <p className="text-gray-400 text-sm max-w-md mx-auto mb-8 leading-relaxed">
+                    Premium fitness facility located near ASTU campus. Build strength, increase endurance, and stay consistent with us.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-6 mb-8">
+                    <a href="#home" onClick={(e) => handleScroll(e, 'home')} className="text-gray-400 hover:text-red-500 font-medium transition-colors text-sm">Home</a>
+                    <a href="#pricing" onClick={(e) => handleScroll(e, 'pricing')} className="text-gray-400 hover:text-red-500 font-medium transition-colors text-sm">Pricing</a>
+                    <a href="#facilities" onClick={(e) => handleScroll(e, 'facilities')} className="text-gray-400 hover:text-red-500 font-medium transition-colors text-sm">Facilities</a>
+                    <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="text-gray-400 hover:text-red-500 font-medium transition-colors text-sm">Contact</a>
                 </div>
-                <div className="mt-8 pt-8 border-t border-gray-700 text-center">
-                    <p className="text-gray-300">
-                        &copy; 2024 ASTU Gym. All rights reserved.
+
+                <div className="flex justify-center gap-6 mb-8">
+                    <a href="#" className="text-zinc-600 hover:text-white transition-colors">
+                        <FaFacebook size={20} />
+                    </a>
+                    <a href="#" className="text-zinc-600 hover:text-white transition-colors">
+                        <FaInstagram size={20} />
+                    </a>
+                    <a href="#" className="text-zinc-600 hover:text-white transition-colors">
+                        <FaTwitter size={20} />
+                    </a>
+                </div>
+
+                <div className="border-t border-zinc-800/50 pt-8 mt-2 w-full max-w-xs mx-auto">
+                    <p className="text-zinc-600 text-xs">
+                        &copy; {new Date().getFullYear()} ASTU Gym. All rights reserved.
                     </p>
                 </div>
             </div>
