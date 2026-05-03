@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 const Hero: React.FC = () => {
     return (
         <section
+            id="home"
             className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
             style={{
                 backgroundImage: `url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`
