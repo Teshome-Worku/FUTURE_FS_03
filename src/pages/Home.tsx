@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Facilities from '../components/Facilities';
 import Pricing from '../components/Pricing';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
 const Home: React.FC = () => {
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
             <Hero />
             <Facilities />
             <Pricing />
+            <Contact />
             <Footer />
         </div>
     );
