@@ -5,6 +5,7 @@ import Facilities from '../components/Facilities';
 import Gallery from '../components/Gallery';
 import Pricing from '../components/Pricing';
 import Cta from '../components/Cta';
+import OpeningHours from '../components/OpeningHours';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -17,10 +18,12 @@ const Home: React.FC = () => {
             <Gallery />
             <Pricing />
             <Cta />
+            <OpeningHours />
             <Contact />
             <Footer />
         </div>
     );
 };
 
-export default Home;
+export default Home;
+
