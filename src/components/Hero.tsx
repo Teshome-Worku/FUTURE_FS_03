@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
             }}
         >
             <div className="absolute inset-0 bg-black/60"></div>
-            
+
             <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center justify-center space-y-8">
                 <motion.h1
                     className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-wide"
@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
-                    Join ASTU GYM and start your fitness journey with the best equipment and environment designed for your success.
+                    Join <span className='text-red-600 font-bold'>ASTU GYM</span> and start your fitness journey with the best equipment and environment designed for your success.
                 </motion.p>
 
                 <motion.div
