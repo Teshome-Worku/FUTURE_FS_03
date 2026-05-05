@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Facilities from '../components/Facilities';
+import Gallery from '../components/Gallery';
 import Pricing from '../components/Pricing';
 import Cta from '../components/Cta';
 import Contact from '../components/Contact';
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
             <Navbar />
             <Hero />
             <Facilities />
+            <Gallery />
             <Pricing />
             <Cta />
             <Contact />
@@ -21,4 +23,4 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export default Home;
