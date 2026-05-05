@@ -4,18 +4,43 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 const Navbar: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
 
+    // Scroll detection for navbar background
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 20;
-            if (isScrolled !== scrolled) {
-                setScrolled(isScrolled);
-            }
+            setScrolled(window.scrollY > 20);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [scrolled]);
+    }, []);
+
+    // Scroll-spy: detect which section is currently in view
+    useEffect(() => {
+        const sectionIds = ['home', 'facilities', 'pricing', 'contact'];
+        const observers: IntersectionObserver[] = [];
+
+        sectionIds.forEach((id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setActiveSection(id);
+                        }
+                    });
+                },
+                { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+            );
+
+            observer.observe(el);
+            observers.push(observer);
+        });
+
+        return () => observers.forEach((obs) => obs.disconnect());
+    }, []);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -25,6 +50,7 @@ const Navbar: React.FC = () => {
         e.preventDefault();
         setIsMobileMenuOpen(false);
         const targetId = href.replace('#', '');
+        setActiveSection(targetId);
         document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
     };
 
@@ -34,6 +60,26 @@ const Navbar: React.FC = () => {
         { name: 'Pricing', href: '#pricing' },
         { name: 'Contact', href: '#contact' }
     ];
+
+    const getLinkClasses = (href: string) => {
+        const id = href.replace('#', '');
+        const isActive = activeSection === id;
+        return `px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+            isActive
+                ? 'text-red-500 border-b-2 border-red-500'
+                : 'text-gray-300 hover:text-white hover:bg-white/10'
+        }`;
+    };
+
+    const getMobileLinkClasses = (href: string) => {
+        const id = href.replace('#', '');
+        const isActive = activeSection === id;
+        return `block px-4 py-4 rounded-xl text-base font-medium transition-all duration-300 ${
+            isActive
+                ? 'text-red-500 bg-red-500/10 border-l-4 border-red-500'
+                : 'text-gray-200 hover:text-white hover:bg-zinc-800/50'
+        }`;
+    };
 
     return (
         <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || isMobileMenuOpen ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
@@ -53,13 +99,13 @@ const Navbar: React.FC = () => {
                     </div>
                     
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-2">
                         {navLinks.map((link) => (
                             <a 
                                 key={link.name} 
                                 href={link.href} 
                                 onClick={(e) => handleLinkClick(e, link.href)}
-                                className="text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                                className={getLinkClasses(link.href)}
                             >
                                 {link.name}
                             </a>
@@ -88,7 +134,7 @@ const Navbar: React.FC = () => {
                                 key={link.name}
                                 href={link.href}
                                 onClick={(e) => handleLinkClick(e, link.href)}
-                                className="text-gray-200 hover:text-white hover:bg-zinc-800/50 block px-4 py-4 rounded-xl text-base font-medium transition-all"
+                                className={getMobileLinkClasses(link.href)}
                             >
                                 {link.name}
                             </a>
