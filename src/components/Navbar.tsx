@@ -45,9 +45,9 @@ const Navbar: React.FC = () => {
                                 <img 
                                     src="/logo.png" 
                                     alt="ASTU Gym Logo" 
-                                    className="h-12 w-auto transition-transform duration-300 group-hover:scale-110 drop-shadow-md" 
+                                    className="h-11 w-auto rounded-lg mix-blend-lighten transition-transform duration-300 group-hover:scale-110" 
                                 />
-                                <span className="hover:text-gray-200 transition-colors">ASTU Gym</span>
+                                <span className="group-hover:text-gray-200 transition-colors">ASTU Gym</span>
                             </a>
                         </div>
                     </div>
