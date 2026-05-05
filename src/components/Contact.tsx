@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
         <section id="contact" className="bg-black py-24 border-t border-zinc-900">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.h2 
+                    <motion.h2
                         className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-wide"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
                     >
                         Find Us & Get Started
                     </motion.h2>
-                    <motion.p 
+                    <motion.p
                         className="text-gray-400 text-lg"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Left Column: Contact Info & Form */}
-                    <motion.div 
+                    <motion.div
                         className="space-y-8"
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-white">Location</p>
-                                        <p className="text-sm">Near ASTU Campus, Adama</p>
+                                        <p className="text-sm">ASTU Main Stadium</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center text-gray-300 group">
@@ -69,16 +69,16 @@ const Contact: React.FC = () => {
                             </div>
 
                             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                                <a 
-                                    href="https://wa.me/251911234567" 
-                                    target="_blank" 
+                                <a
+                                    href="https://wa.me/251911234567"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex-1 bg-green-600 hover:bg-green-500 text-white py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-green-600/20"
                                 >
                                     <FaWhatsapp className="text-2xl" />
                                     WhatsApp Us
                                 </a>
-                                <a 
+                                <a
                                     href="tel:+251911234567"
                                     className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-3 px-6 rounded-xl font-bold transition-all duration-300 flex items-center justify-center text-center"
                                 >
@@ -108,24 +108,24 @@ const Contact: React.FC = () => {
                     </motion.div>
 
                     {/* Right Column: Map */}
-                    <motion.div 
+                    <motion.div
                         className="h-full min-h-[400px] lg:min-h-[800px] rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 relative group shadow-xl"
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0645607335626!2d39.28822007469792!3d8.541571295982888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1f6db9e73549%3A0xcadcc6cebe7338e3!2sAdama%20Science%20and%20Technology%20University!5e0!3m2!1sen!2set!4v1714496245997!5m2!1sen!2set" 
-                            width="100%" 
-                            height="100%" 
-                            style={{ border: 0 }} 
-                            allowFullScreen={true} 
-                            loading="lazy" 
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.0645607335626!2d39.28822007469792!3d8.541571295982888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b1f6db9e73549%3A0xcadcc6cebe7338e3!2sAdama%20Science%20and%20Technology%20University!5e0!3m2!1sen!2set!4v1714496245997!5m2!1sen!2set"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen={true}
+                            loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             className="absolute inset-0 grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                         ></iframe>
-                        
+
                         <div className="absolute top-6 left-6 bg-black/80 backdrop-blur-md p-4 rounded-xl border border-zinc-700 pointer-events-none transition-opacity duration-300 group-hover:opacity-0">
                             <p className="text-white font-bold flex items-center gap-2">
                                 <FaMapMarkerAlt className="text-red-500" />
